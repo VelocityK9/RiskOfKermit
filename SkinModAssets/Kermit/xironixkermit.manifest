@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 304049700
+CRC: 575522831
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: d4656acc2189d7e6a3545039436faa88
+    Hash: 2ca3280f673de1550383bd9227062033
   TypeTreeHash:
     serializedVersion: 2
     Hash: 46e9d7502db8683b6fa653c67c544c7f
@@ -26,5 +26,6 @@ Assets:
 - Assets/SkinMods/Kermit/Meshes/KermitCommando.mesh
 - Assets/SkinMods/Kermit/Meshes/KermitHuntress.mesh
 - Assets/Resources/Combined.mat
+- Assets/SkinMods/Kermit/Meshes/KermitMercenary.mesh
 - Assets/SkinMods/Kermit/Meshes/KermitRailgunner.mesh
 Dependencies: []

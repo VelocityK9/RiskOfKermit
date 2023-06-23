@@ -20,6 +20,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b037015f301ee494e9a2c78337393c4f, type: 2}
   - {fileID: 11400000, guid: 7dcc9de3e4a6e294585c5546ea6bf951, type: 2}
   - {fileID: 11400000, guid: 5d2cac5fb72f640499dd35d38faf830d, type: 2}
+  - {fileID: 11400000, guid: 8304bef1329672d459cc50dc34290d4a, type: 2}
   additionalResources: []
   regenerateCode: 1
   regenerateAssemblyDefinition: 1
