@@ -68,7 +68,7 @@ MonoBehaviour:
     rendererReference:
       accessType: 0
       name: 
-      index: 2
+      index: 3
       isExpanded: 1
   - defaultMaterial: {fileID: 2100000, guid: 27a5268a446ad9b44a0f521dec952cc5, type: 2}
     defaultShadowCastingMode: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
     rendererReference:
       accessType: 0
       name: 
-      index: 3
+      index: 2
       isExpanded: 1
   minionSkinReplacements: []
   projectileGhostReplacements: []

@@ -378,14 +378,14 @@ namespace Kermit
                             defaultMaterial = assetBundle.LoadAsset<Material>(@"Assets/Resources/Combined.mat"),
                             defaultShadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off,
                             ignoreOverlays = false,
-                            renderer = renderers[2]
+                            renderer = renderers[3]
                         },
                         new CharacterModel.RendererInfo
                         {
                             defaultMaterial = assetBundle.LoadAsset<Material>(@"Assets/Resources/Combined.mat"),
                             defaultShadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off,
                             ignoreOverlays = false,
-                            renderer = renderers[3]
+                            renderer = renderers[2]
                         },
                     };
                 });
