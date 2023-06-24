@@ -40,11 +40,11 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 0
     isExpanded: 0
-  unlockableName: 
+  unlockableName: Kermit
   baseSkins:
   - accessType: 0
     name: 
-    index: 0
+    index: 1
     isExpanded: 1
   renderersSource: 0
   meshReplacements:
@@ -58,19 +58,7 @@ MonoBehaviour:
     rendererReference:
       accessType: 0
       name: 
-      index: 1
-      isExpanded: 1
-  - mesh: {fileID: 4201722403497511870, guid: 4ee5b41b5252305429576854dbe59e71, type: 3}
-    rendererReference:
-      accessType: 0
-      name: 
       index: 2
-      isExpanded: 1
-  - mesh: {fileID: 4201722403497511870, guid: 4ee5b41b5252305429576854dbe59e71, type: 3}
-    rendererReference:
-      accessType: 0
-      name: 
-      index: 3
       isExpanded: 1
   - mesh: {fileID: 4201722403497511870, guid: 4ee5b41b5252305429576854dbe59e71, type: 3}
     rendererReference:
@@ -83,6 +71,18 @@ MonoBehaviour:
       accessType: 0
       name: 
       index: 6
+      isExpanded: 1
+  - mesh: {fileID: 4201722403497511870, guid: 4ee5b41b5252305429576854dbe59e71, type: 3}
+    rendererReference:
+      accessType: 0
+      name: 
+      index: 3
+      isExpanded: 1
+  - mesh: {fileID: 3648737777661448857, guid: 4ee5b41b5252305429576854dbe59e71, type: 3}
+    rendererReference:
+      accessType: 0
+      name: 
+      index: 1
       isExpanded: 1
   gameObjectActivations: []
   rendererInfos:
@@ -93,14 +93,6 @@ MonoBehaviour:
       accessType: 0
       name: 
       index: 0
-      isExpanded: 0
-  - defaultMaterial: {fileID: 2100000, guid: 27a5268a446ad9b44a0f521dec952cc5, type: 2}
-    defaultShadowCastingMode: 0
-    ignoreOverlays: 0
-    rendererReference:
-      accessType: 0
-      name: 
-      index: 1
       isExpanded: 1
   - defaultMaterial: {fileID: 2100000, guid: 27a5268a446ad9b44a0f521dec952cc5, type: 2}
     defaultShadowCastingMode: 0
@@ -116,14 +108,6 @@ MonoBehaviour:
     rendererReference:
       accessType: 0
       name: 
-      index: 3
-      isExpanded: 0
-  - defaultMaterial: {fileID: 2100000, guid: 27a5268a446ad9b44a0f521dec952cc5, type: 2}
-    defaultShadowCastingMode: 0
-    ignoreOverlays: 0
-    rendererReference:
-      accessType: 0
-      name: 
       index: 5
       isExpanded: 1
   - defaultMaterial: {fileID: 2100000, guid: 27a5268a446ad9b44a0f521dec952cc5, type: 2}
@@ -133,6 +117,14 @@ MonoBehaviour:
       accessType: 0
       name: 
       index: 6
+      isExpanded: 1
+  - defaultMaterial: {fileID: 2100000, guid: 27a5268a446ad9b44a0f521dec952cc5, type: 2}
+    defaultShadowCastingMode: 0
+    ignoreOverlays: 0
+    rendererReference:
+      accessType: 0
+      name: 
+      index: 3
       isExpanded: 1
   minionSkinReplacements: []
   projectileGhostReplacements: []

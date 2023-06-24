@@ -39,8 +39,8 @@ MonoBehaviour:
       bottom:
         serializedVersion: 2
         rgba: 0
-    isExpanded: 1
-  unlockableName: 
+    isExpanded: 0
+  unlockableName: Kermit
   baseSkins:
   - accessType: 0
     name: 
@@ -57,7 +57,7 @@ MonoBehaviour:
   gameObjectActivations: []
   rendererInfos:
   - defaultMaterial: {fileID: 2100000, guid: 27a5268a446ad9b44a0f521dec952cc5, type: 2}
-    defaultShadowCastingMode: 1
+    defaultShadowCastingMode: 0
     ignoreOverlays: 0
     rendererReference:
       accessType: 0

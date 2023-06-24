@@ -149,7 +149,7 @@ namespace Kermit
                 });
                 TryCatchThrow("Unlockable Name", () =>
                 {
-                    skin.unlockableDef = null;
+                    skin.unlockableDef = ContentManager.unlockableDefs.FirstOrDefault(def => def.cachedName == "Kermit");
                 });
                 TryCatchThrow("Game Object Activations", () =>
                 {
@@ -162,7 +162,7 @@ namespace Kermit
                         new CharacterModel.RendererInfo
                         {
                             defaultMaterial = assetBundle.LoadAsset<Material>(@"Assets/Resources/Combined.mat"),
-                            defaultShadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On,
+                            defaultShadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off,
                             ignoreOverlays = false,
                             renderer = renderers[6]
                         },
@@ -256,7 +256,7 @@ namespace Kermit
                 });
                 TryCatchThrow("Unlockable Name", () =>
                 {
-                    skin.unlockableDef = null;
+                    skin.unlockableDef = ContentManager.unlockableDefs.FirstOrDefault(def => def.cachedName == "Kermit");
                 });
                 TryCatchThrow("Game Object Activations", () =>
                 {
@@ -363,7 +363,7 @@ namespace Kermit
                 });
                 TryCatchThrow("Unlockable Name", () =>
                 {
-                    skin.unlockableDef = null;
+                    skin.unlockableDef = ContentManager.unlockableDefs.FirstOrDefault(def => def.cachedName == "Kermit");
                 });
                 TryCatchThrow("Game Object Activations", () =>
                 {
@@ -477,12 +477,12 @@ namespace Kermit
                 {
                     skin.baseSkins = new SkinDef[] 
                     { 
-                        skinController.skins[0],
+                        skinController.skins[1],
                     };
                 });
                 TryCatchThrow("Unlockable Name", () =>
                 {
-                    skin.unlockableDef = null;
+                    skin.unlockableDef = ContentManager.unlockableDefs.FirstOrDefault(def => def.cachedName == "Kermit");
                 });
                 TryCatchThrow("Game Object Activations", () =>
                 {
@@ -504,21 +504,7 @@ namespace Kermit
                             defaultMaterial = assetBundle.LoadAsset<Material>(@"Assets/Resources/Combined.mat"),
                             defaultShadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off,
                             ignoreOverlays = false,
-                            renderer = renderers[1]
-                        },
-                        new CharacterModel.RendererInfo
-                        {
-                            defaultMaterial = assetBundle.LoadAsset<Material>(@"Assets/Resources/Combined.mat"),
-                            defaultShadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off,
-                            ignoreOverlays = false,
                             renderer = renderers[2]
-                        },
-                        new CharacterModel.RendererInfo
-                        {
-                            defaultMaterial = assetBundle.LoadAsset<Material>(@"Assets/Resources/Combined.mat"),
-                            defaultShadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off,
-                            ignoreOverlays = false,
-                            renderer = renderers[3]
                         },
                         new CharacterModel.RendererInfo
                         {
@@ -533,6 +519,13 @@ namespace Kermit
                             defaultShadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off,
                             ignoreOverlays = false,
                             renderer = renderers[6]
+                        },
+                        new CharacterModel.RendererInfo
+                        {
+                            defaultMaterial = assetBundle.LoadAsset<Material>(@"Assets/Resources/Combined.mat"),
+                            defaultShadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off,
+                            ignoreOverlays = false,
+                            renderer = renderers[3]
                         },
                     };
                 });
@@ -548,17 +541,7 @@ namespace Kermit
                         new SkinDef.MeshReplacement
                         {
                             mesh = assetBundle.LoadAsset<Mesh>(@"Assets\SkinMods\Kermit\Meshes\KermitCaptain.mesh"),
-                            renderer = renderers[1]
-                        },
-                        new SkinDef.MeshReplacement
-                        {
-                            mesh = assetBundle.LoadAsset<Mesh>(@"Assets\SkinMods\Kermit\Meshes\KermitCaptain.mesh"),
                             renderer = renderers[2]
-                        },
-                        new SkinDef.MeshReplacement
-                        {
-                            mesh = assetBundle.LoadAsset<Mesh>(@"Assets\SkinMods\Kermit\Meshes\KermitCaptain.mesh"),
-                            renderer = renderers[3]
                         },
                         new SkinDef.MeshReplacement
                         {
@@ -569,6 +552,16 @@ namespace Kermit
                         {
                             mesh = assetBundle.LoadAsset<Mesh>(@"Assets\SkinMods\Kermit\Meshes\KermitCaptain.mesh"),
                             renderer = renderers[6]
+                        },
+                        new SkinDef.MeshReplacement
+                        {
+                            mesh = assetBundle.LoadAsset<Mesh>(@"Assets\SkinMods\Kermit\Meshes\KermitCaptain.mesh"),
+                            renderer = renderers[3]
+                        },
+                        new SkinDef.MeshReplacement
+                        {
+                            mesh = assetBundle.LoadAsset<Mesh>(@"Assets\SkinMods\Kermit\Meshes\Empty.mesh"),
+                            renderer = renderers[1]
                         },
                     };
                 });
@@ -642,11 +635,14 @@ namespace Kermit
                 skin.rootObject = mdl;
                 TryCatchThrow("Base Skins", () =>
                 {
-                    skin.baseSkins = Array.Empty<SkinDef>();
+                    skin.baseSkins = new SkinDef[] 
+                    { 
+                        skinController.skins[0],
+                    };
                 });
                 TryCatchThrow("Unlockable Name", () =>
                 {
-                    skin.unlockableDef = null;
+                    skin.unlockableDef = ContentManager.unlockableDefs.FirstOrDefault(def => def.cachedName == "Kermit");
                 });
                 TryCatchThrow("Game Object Activations", () =>
                 {

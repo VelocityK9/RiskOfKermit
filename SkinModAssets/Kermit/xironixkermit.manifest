@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3474086382
+CRC: 379653152
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: a9e25c8fc9e8722726b4c00fc9280103
+    Hash: a4e4b790a7236000fc1a8f0a84652edf
   TypeTreeHash:
     serializedVersion: 2
     Hash: 46e9d7502db8683b6fa653c67c544c7f
@@ -23,6 +23,7 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Resources/Icon.png
 - Assets/SkinMods/Kermit/Meshes/KermitCaptain.mesh
+- Assets/SkinMods/Kermit/Meshes/Empty.mesh
 - Assets/SkinMods/Kermit/Meshes/KermitCommando.mesh
 - Assets/SkinMods/Kermit/Meshes/KermitHuntress.mesh
 - Assets/Resources/Combined.mat

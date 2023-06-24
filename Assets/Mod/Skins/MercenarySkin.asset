@@ -38,8 +38,12 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 0
     isExpanded: 1
-  unlockableName: 
-  baseSkins: []
+  unlockableName: Kermit
+  baseSkins:
+  - accessType: 0
+    name: 
+    index: 0
+    isExpanded: 1
   renderersSource: 0
   meshReplacements:
   - mesh: {fileID: -7810173352598386866, guid: 57924e5ec14232c4ab51a47cd5462cb3, type: 3}
