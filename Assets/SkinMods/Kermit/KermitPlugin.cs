@@ -75,6 +75,7 @@ namespace Kermit
             self.SetStringByToken("XIRONIX_SKIN_HUNTRESSSKIN_NAME", "Kermit");
             self.SetStringByToken("XIRONIX_SKIN_RAILGUNNERSKIN_NAME", "Kermit");
             self.SetStringByToken("XIRONIX_SKIN_CAPTAINSKIN_NAME", "Kermit");
+            self.SetStringByToken("XIRONIX_SKIN_LOADERSKIN_NAME", "Kermit");
         }
 
         private static void Nothing(Action<SkinDef> orig, SkinDef self)
@@ -94,6 +95,7 @@ namespace Kermit
             AddRailgunnerBodyRailgunnerSkinSkin();
             AddCaptainBodyCaptainSkinSkin();
             AddMercBodyMercenarySkinSkin();
+            AddLoaderBodyLoaderSkinSkin();
             
             HookEndpointManager.Remove(awake, (Action<Action<SkinDef>, SkinDef>)Nothing);
 
@@ -686,6 +688,125 @@ namespace Kermit
 
                 BodyCatalog.skins[(int)BodyCatalog.FindBodyIndex(bodyPrefab)] = skinController.skins;
                 MercBodyMercenarySkinSkinAdded(skin, bodyPrefab);
+            }
+            catch (FieldException e)
+            {
+                InstanceLogger.LogWarning($"Failed to add \"{skinName}\" skin to \"{bodyName}\"");
+                InstanceLogger.LogWarning($"Field causing issue: {e.Message}");
+                InstanceLogger.LogError(e.InnerException);
+            }
+            catch (Exception e)
+            {
+                InstanceLogger.LogWarning($"Failed to add \"{skinName}\" skin to \"{bodyName}\"");
+                InstanceLogger.LogError(e);
+            }
+        }
+
+        static partial void LoaderBodyLoaderSkinSkinAdded(SkinDef skinDef, GameObject bodyPrefab);
+
+        private static void AddLoaderBodyLoaderSkinSkin()
+        {
+            var bodyName = "LoaderBody";
+            var skinName = "LoaderSkin";
+            try
+            {
+                var bodyPrefab = BodyCatalog.FindBodyPrefab(bodyName);
+                if (!bodyPrefab)
+                {
+                    InstanceLogger.LogWarning($"Failed to add \"{skinName}\" skin because \"{bodyName}\" doesn't exist");
+                    return;
+                }
+
+                var modelLocator = bodyPrefab.GetComponent<ModelLocator>();
+                if (!modelLocator)
+                {
+                    InstanceLogger.LogWarning($"Failed to add \"{skinName}\" skin to \"{bodyName}\" because it doesn't have \"ModelLocator\" component");
+                    return;
+                }
+
+                var mdl = modelLocator.modelTransform.gameObject;
+                var skinController = mdl ? mdl.GetComponent<ModelSkinController>() : null;
+                if (!skinController)
+                {
+                    InstanceLogger.LogWarning($"Failed to add \"{skinName}\" skin to \"{bodyName}\" because it doesn't have \"ModelSkinController\" component");
+                    return;
+                }
+
+                var renderers = mdl.GetComponentsInChildren<Renderer>(true);
+
+                var skin = ScriptableObject.CreateInstance<SkinDef>();
+                TryCatchThrow("Icon", () =>
+                {
+                    skin.icon = assetBundle.LoadAsset<Sprite>(@"Assets/Resources/Icon.png");
+                });
+                skin.name = skinName;
+                skin.nameToken = "XIRONIX_SKIN_LOADERSKIN_NAME";
+                skin.rootObject = mdl;
+                TryCatchThrow("Base Skins", () =>
+                {
+                    skin.baseSkins = new SkinDef[] 
+                    { 
+                        skinController.skins[0],
+                    };
+                });
+                TryCatchThrow("Unlockable Name", () =>
+                {
+                    skin.unlockableDef = null;
+                });
+                TryCatchThrow("Game Object Activations", () =>
+                {
+                    skin.gameObjectActivations = Array.Empty<SkinDef.GameObjectActivation>();
+                });
+                TryCatchThrow("Renderer Infos", () =>
+                {
+                    skin.rendererInfos = new CharacterModel.RendererInfo[]
+                    {
+                        new CharacterModel.RendererInfo
+                        {
+                            defaultMaterial = assetBundle.LoadAsset<Material>(@"Assets/Resources/Combined.mat"),
+                            defaultShadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off,
+                            ignoreOverlays = false,
+                            renderer = renderers[1]
+                        },
+                        new CharacterModel.RendererInfo
+                        {
+                            defaultMaterial = assetBundle.LoadAsset<Material>(@"Assets/Resources/Combined.mat"),
+                            defaultShadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off,
+                            ignoreOverlays = false,
+                            renderer = renderers[2]
+                        },
+                    };
+                });
+                TryCatchThrow("Mesh Replacements", () =>
+                {
+                    skin.meshReplacements = new SkinDef.MeshReplacement[]
+                    {
+                        new SkinDef.MeshReplacement
+                        {
+                            mesh = assetBundle.LoadAsset<Mesh>(@"Assets\SkinMods\Kermit\Meshes\KermitLoader.mesh"),
+                            renderer = renderers[1]
+                        },
+                        new SkinDef.MeshReplacement
+                        {
+                            mesh = assetBundle.LoadAsset<Mesh>(@"Assets\SkinMods\Kermit\Meshes\KermitLoader.mesh"),
+                            renderer = renderers[2]
+                        },
+                    };
+                });
+                TryCatchThrow("Minion Skin Replacements", () =>
+                {
+                    skin.minionSkinReplacements = Array.Empty<SkinDef.MinionSkinReplacement>();
+                });
+                TryCatchThrow("Projectile Ghost Replacements", () =>
+                {
+                    skin.projectileGhostReplacements = Array.Empty<SkinDef.ProjectileGhostReplacement>();
+                });
+
+                Array.Resize(ref skinController.skins, skinController.skins.Length + 1);
+                skinController.skins[skinController.skins.Length - 1] = skin;
+
+                BodyCatalog.skins[(int)BodyCatalog.FindBodyIndex(bodyPrefab)] = skinController.skins;
+                LoaderBodyLoaderSkinSkinAdded(skin, bodyPrefab);
             }
             catch (FieldException e)
             {
