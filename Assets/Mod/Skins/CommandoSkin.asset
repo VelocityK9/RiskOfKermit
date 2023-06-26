@@ -40,7 +40,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 0
     isExpanded: 0
-  unlockableName: Kermit
+  unlockableName: 
   baseSkins:
   - accessType: 0
     name: 
