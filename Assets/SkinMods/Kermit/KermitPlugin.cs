@@ -18,7 +18,7 @@ using UnityEngine.AddressableAssets;
 namespace Kermit
 {
     
-    [BepInPlugin("com.Xironix.Kermit","Kermit","1.0.0")]
+    [BepInPlugin("com.Xironix.Kermit","Kermit","1.0.1")]
     public partial class KermitPlugin : BaseUnityPlugin
     {
         internal static KermitPlugin Instance { get; private set; }
@@ -75,6 +75,7 @@ namespace Kermit
             self.SetStringByToken("XIRONIX_SKIN_HUNTRESSSKIN_NAME", "Kermit");
             self.SetStringByToken("XIRONIX_SKIN_RAILGUNNERSKIN_NAME", "Kermit");
             self.SetStringByToken("XIRONIX_SKIN_CAPTAINSKIN_NAME", "Kermit");
+            self.SetStringByToken("XIRONIX_SKIN_MERCENARYSKIN_NAME", "Kermit");
             self.SetStringByToken("XIRONIX_SKIN_LOADERSKIN_NAME", "Kermit");
             self.SetStringByToken("XIRONIX_SKIN_BANDITSKIN_NAME", "Kermit");
             self.SetStringByToken("XIRONIX_SKIN_FIENDSKIN_NAME", "Kermit");
@@ -155,7 +156,7 @@ namespace Kermit
                 });
                 TryCatchThrow("Unlockable Name", () =>
                 {
-                    skin.unlockableDef = ContentManager.unlockableDefs.FirstOrDefault(def => def.cachedName == "Kermit");
+                    skin.unlockableDef = null;
                 });
                 TryCatchThrow("Game Object Activations", () =>
                 {
@@ -262,7 +263,7 @@ namespace Kermit
                 });
                 TryCatchThrow("Unlockable Name", () =>
                 {
-                    skin.unlockableDef = ContentManager.unlockableDefs.FirstOrDefault(def => def.cachedName == "Kermit");
+                    skin.unlockableDef = null;
                 });
                 TryCatchThrow("Game Object Activations", () =>
                 {
@@ -369,7 +370,7 @@ namespace Kermit
                 });
                 TryCatchThrow("Unlockable Name", () =>
                 {
-                    skin.unlockableDef = ContentManager.unlockableDefs.FirstOrDefault(def => def.cachedName == "Kermit");
+                    skin.unlockableDef = null;
                 });
                 TryCatchThrow("Game Object Activations", () =>
                 {
@@ -488,7 +489,7 @@ namespace Kermit
                 });
                 TryCatchThrow("Unlockable Name", () =>
                 {
-                    skin.unlockableDef = ContentManager.unlockableDefs.FirstOrDefault(def => def.cachedName == "Kermit");
+                    skin.unlockableDef = null;
                 });
                 TryCatchThrow("Game Object Activations", () =>
                 {
@@ -648,7 +649,7 @@ namespace Kermit
                 });
                 TryCatchThrow("Unlockable Name", () =>
                 {
-                    skin.unlockableDef = ContentManager.unlockableDefs.FirstOrDefault(def => def.cachedName == "Kermit");
+                    skin.unlockableDef = null;
                 });
                 TryCatchThrow("Game Object Activations", () =>
                 {

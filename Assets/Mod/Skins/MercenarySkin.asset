@@ -20,7 +20,9 @@ MonoBehaviour:
     enableConfigDefaultValue: 1
     isExpanded: 1
   bodyName: MercBody
-  nameTokenLocalizations: []
+  nameTokenLocalizations:
+  - language: en
+    value: Kermit
   icon:
     createFromColors: 0
     sprite: {fileID: 21300000, guid: 2db84fe0495e73c48b2aae7c1eb73b81, type: 3}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modName: Kermit
   author: Xironix
-  version: 1.0.0
+  version: 1.0.1
   skins:
   - {fileID: 11400000, guid: e34d05c3e06e56e45b66f148bb3de995, type: 2}
   - {fileID: 11400000, guid: b037015f301ee494e9a2c78337393c4f, type: 2}
